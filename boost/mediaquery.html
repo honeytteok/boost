@@ -1,0 +1,10 @@
+media_query_list
+ : S* [media_query [ ',' S* media_query ]* ]?
+ ;
+media_query
+ : [ONLY | NOT]? S* media_type S* [ AND S* expression ]*
+ | expression [ AND S* expression ]*
+ ;
+expression
+ : '(' S* media_feature S* [ ':' S* expr ]? ')' S*
+ ;
